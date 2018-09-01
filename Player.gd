@@ -40,14 +40,14 @@ func Smooth(x, target, delta):
 	return target
 
 func _physics_process(delta):
-	dy += delta * GRAVITY
 	var input_pressed = input_down and not last_input
 	last_input = input_down
 
 	match state:
 		State.Idle:
 			dx = 0
-			dy = 0
+			if is_on_floor():
+				dy = 0
 			if input_pressed:
 				state = State.Skating
 				print("skate")
@@ -60,7 +60,7 @@ func _physics_process(delta):
 				print("preparing")
 			elif is_on_floor():
 				dy = 0
-			elif dy > 10:
+			elif dy > 12:
 				print("fall" + str(dy))
 				state = State.Falling
 		State.Prepare:
@@ -77,7 +77,8 @@ func _physics_process(delta):
 				$Sprite.flip_h = not $Sprite.flip_h
 				print("wall jump")
 				Jump()
-			if is_on_floor():
+			elif is_on_floor():
+				print("landed on floor")
 				state = State.Skating
 		State.Falling:
 			dx = 0;
@@ -86,6 +87,7 @@ func _physics_process(delta):
 				print("to idle")
 				state = State.Idle
 	
+	dy += delta * GRAVITY
 	var vel = Vector2(dx,dy)
 	if not $Sprite.flip_h:
 		vel.x = -vel.x
