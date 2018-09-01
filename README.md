@@ -10,4 +10,4 @@ It's like super meat boy but it's less polished and you can't run.
 
 It's like skate or die, but you'll die. Many times.
 
-It's like I spent way to much writing this readme and to making the game.
+It's like I spent way to much writing this readme and less time making the game.
