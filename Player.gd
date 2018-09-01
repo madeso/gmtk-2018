@@ -77,6 +77,8 @@ func _physics_process(delta):
 				$Sprite.flip_h = not $Sprite.flip_h
 				print("wall jump")
 				Jump()
+			elif is_on_ceiling():
+				dy = 0
 			elif is_on_floor():
 				print("landed on floor")
 				state = State.Skating
