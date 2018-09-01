@@ -7,7 +7,7 @@ extends KinematicBody2D
 const GRAVITY = 100
 const JUMP_SPEED = 70
 const SKATE_SPEED = 64
-const PREPARE_SPEED = 80
+const PREPARE_SPEED = 100
 
 var input_down = false
 var last_input = false
@@ -37,7 +37,7 @@ func Jump():
 	dy = -JUMP_SPEED
 
 func Smooth(x, target, delta):
-	return target
+	return x + (target-x) * 0.1
 
 func _physics_process(delta):
 	var input_pressed = input_down and not last_input

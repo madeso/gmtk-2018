@@ -14,6 +14,12 @@ config/name="Skate and die"
 run/main_scene="res://test-world.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=640
+window/size/height=480
+
 [rendering]
 
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
