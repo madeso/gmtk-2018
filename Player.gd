@@ -49,6 +49,7 @@ func Smooth(x, target, delta):
 func _physics_process(delta):
 	var input_pressed = input_down and not last_input
 	last_input = input_down
+	$Sprite.playing = true
 
 	match state:
 		State.Idle:
@@ -106,7 +107,7 @@ func _physics_process(delta):
 	
 	dy += delta * GRAVITY
 	var vel = Vector2(dx,dy)
-	if not $Sprite.flip_h:
+	if $Sprite.flip_h:
 		vel.x = -vel.x
 	move_and_slide(vel, Vector2(0,-1))
 	dy = vel.y
