@@ -1,9 +1,51 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://player.png" type="Texture" id=3]
-[ext_resource path="res://Camera.gd" type="Script" id=4]
+[ext_resource path="res://player8.png" type="Texture" id=3]
+[ext_resource path="res://player9.png" type="Texture" id=4]
+[ext_resource path="res://player1.png" type="Texture" id=5]
+[ext_resource path="res://player4.png" type="Texture" id=6]
+[ext_resource path="res://player5.png" type="Texture" id=7]
+[ext_resource path="res://player7.png" type="Texture" id=8]
+[ext_resource path="res://player2.png" type="Texture" id=9]
+[ext_resource path="res://player3.png" type="Texture" id=10]
+[ext_resource path="res://player6.png" type="Texture" id=11]
+[ext_resource path="res://Camera.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Prep",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "JumpDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Skate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "JumpUp",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -44,9 +86,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Player" index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="Player" index="0"]
 
-texture = ExtResource( 3 )
+frames = SubResource( 2 )
+animation = "Idle"
 _sections_unfolded = [ "Offset" ]
 
 [node name="Collision" type="CollisionShape2D" parent="Player" index="1"]
@@ -58,7 +101,7 @@ shape = SubResource( 1 )
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.5, 0.5 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
@@ -77,7 +120,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 4 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Drag Margin" ]
 
 

@@ -12,6 +12,13 @@ const PREPARE_SPEED = 100
 var input_down = false
 var last_input = false
 
+const ANIM_IDLE = "Idle"
+const ANIM_SKATE = "Skate"
+const ANIM_PREP = "Prep"
+const ANIM_JUMPUP = "JumpUp"
+const ANIM_JUMPDOWN = "JumpDown"
+const ANIM_FALL = "Fall"
+
 var dx = 0.0
 var dy = 0.0
 
@@ -46,12 +53,14 @@ func _physics_process(delta):
 	match state:
 		State.Idle:
 			dx = 0
+			$Sprite.animation = ANIM_IDLE
 			if is_on_floor():
 				dy = 0
 			if input_pressed:
 				state = State.Skating
 				print("skate")
 		State.Skating:
+			$Sprite.animation = ANIM_SKATE
 			dx = Smooth(dx, SKATE_SPEED, delta)
 			if is_on_wall():
 				$Sprite.flip_h = not $Sprite.flip_h
@@ -61,9 +70,10 @@ func _physics_process(delta):
 			elif is_on_floor():
 				dy = 0
 			elif dy > 12:
-				print("fall" + str(dy))
+				print("fall " + str(dy))
 				state = State.Falling
 		State.Prepare:
+			$Sprite.animation = ANIM_PREP
 			dx = Smooth(dx, PREPARE_SPEED, delta)
 			if is_on_wall():
 				$Sprite.flip_h = not $Sprite.flip_h
@@ -73,6 +83,10 @@ func _physics_process(delta):
 				Jump()
 				print("jump")
 		State.Jumping:
+			if dy > 0:
+				$Sprite.animation = ANIM_JUMPDOWN
+			else:
+				$Sprite.animation = ANIM_JUMPUP
 			if is_on_wall():
 				$Sprite.flip_h = not $Sprite.flip_h
 				print("wall jump")
@@ -83,6 +97,7 @@ func _physics_process(delta):
 				print("landed on floor")
 				state = State.Skating
 		State.Falling:
+			$Sprite.animation = ANIM_FALL
 			dx = 0;
 			if is_on_floor():
 				dy = 0

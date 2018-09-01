@@ -16,7 +16,7 @@ func _process(delta):
 	var player = $"./../Player"
 	var player_sprite = $"./../Player/Sprite"
 	var p = player.to_global(Vector2(0,0))
-	var d = 100
+	var d = 50
 	if player_sprite.flip_h:
 		d = -d
 	global_position.x = Smooth(global_position.x, p.x - d, delta)
