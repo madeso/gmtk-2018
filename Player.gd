@@ -45,6 +45,9 @@ func Jump():
 
 func Smooth(x, target, delta):
 	return x + (target-x) * 0.1
+	
+func random_sound(name, count):
+	get_node("Sfx/" + name + str(randi()%count)).play()
 
 func _physics_process(delta):
 	var input_pressed = input_down and not last_input
@@ -59,7 +62,7 @@ func _physics_process(delta):
 				dy = 0
 			if input_pressed:
 				state = State.Skating
-				$Sfx/Kickstart1.play()
+				random_sound("Kickstart", 2)
 				print("skate")
 		State.Skating:
 			$Sprite.animation = ANIM_SKATE
@@ -68,11 +71,12 @@ func _physics_process(delta):
 				$Sprite.flip_h = not $Sprite.flip_h
 			if input_pressed:
 				state = State.Prepare
+				$Sfx/Prepare.play()
 				print("preparing")
 			elif is_on_floor():
 				dy = 0
 			elif dy > 12:
-				$Sfx/Fall1.play()
+				random_sound("Fall", 3)
 				print("fall " + str(dy))
 				state = State.Falling
 		State.Prepare:
@@ -84,7 +88,7 @@ func _physics_process(delta):
 			if not input_down:
 				state = State.Jumping
 				Jump()
-				$Sfx/Jump1.play()
+				random_sound("Jump", 3)
 				print("jump")
 		State.Jumping:
 			if dy > 0:
@@ -94,12 +98,12 @@ func _physics_process(delta):
 			if is_on_wall():
 				$Sprite.flip_h = not $Sprite.flip_h
 				print("wall jump")
-				$Sfx/Walljump1.play()
+				random_sound("Walljump", 3)
 				Jump()
 			elif is_on_ceiling():
 				dy = 0
 			elif is_on_floor():
-				$Sfx/Land1.play()
+				random_sound("Land", 3)
 				print("landed on floor")
 				if input_down:
 					state = State.Prepare
