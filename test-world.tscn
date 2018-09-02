@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.gd" type="Script" id=2]
@@ -40,7 +40,8 @@
 [ext_resource path="res://background6.png" type="Texture" id=38]
 [ext_resource path="res://background5.png" type="Texture" id=39]
 [ext_resource path="res://Spikes.gd" type="Script" id=40]
-[ext_resource path="res://spikes.png" type="Texture" id=41]
+[ext_resource path="res://sfx/on-spike.wav" type="AudioStream" id=41]
+[ext_resource path="res://spikes.png" type="Texture" id=42]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -172,7 +173,7 @@ shape = SubResource( 4 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 5 )
 animation = "Idle"
-frame = 2
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 
@@ -507,9 +508,21 @@ script = ExtResource( 40 )
 
 shape = SubResource( 6 )
 
-[node name="spikes" type="Sprite" parent="Spikes" index="1"]
+[node name="Sfx" type="AudioStreamPlayer2D" parent="Spikes" index="1"]
 
-texture = ExtResource( 41 )
+position = Vector2( -172, -32 )
+stream = ExtResource( 41 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="spikes" type="Sprite" parent="Spikes" index="2"]
+
+texture = ExtResource( 42 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="Door" to="Door" method="_on_Door_body_entered"]
