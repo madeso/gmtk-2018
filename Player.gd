@@ -11,6 +11,7 @@ const PREPARE_SPEED = 100
 
 var input_down = false
 var last_input = false
+var has_mail = false
 
 const ANIM_IDLE = "Idle"
 const ANIM_SKATE = "Skate"
@@ -90,6 +91,12 @@ func _physics_process(delta):
 				Jump()
 				random_sound("Jump", 3)
 				print("jump")
+			elif is_on_floor():
+				dy = 0
+			elif dy > 12:
+				random_sound("Fall", 3)
+				print("fall " + str(dy))
+				state = State.Falling
 		State.Jumping:
 			if dy > 0:
 				$Sprite.animation = ANIM_JUMPDOWN
