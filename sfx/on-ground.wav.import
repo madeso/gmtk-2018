@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/on-ground.wav-72edc9fe05d6e5deffa77998b7d51fc5.sample"
+
+[deps]
+
+source_file="res://sfx/on-ground.wav"
+dest_files=[ "res://.import/on-ground.wav-72edc9fe05d6e5deffa77998b7d51fc5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

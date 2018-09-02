@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -11,12 +11,19 @@
 [ext_resource path="res://player2.png" type="Texture" id=9]
 [ext_resource path="res://player3.png" type="Texture" id=10]
 [ext_resource path="res://player6.png" type="Texture" id=11]
-[ext_resource path="res://Camera.gd" type="Script" id=12]
-[ext_resource path="res://background7.png" type="Texture" id=13]
-[ext_resource path="res://background4.png" type="Texture" id=14]
-[ext_resource path="res://background1.png" type="Texture" id=15]
-[ext_resource path="res://background6.png" type="Texture" id=16]
-[ext_resource path="res://background5.png" type="Texture" id=17]
+[ext_resource path="res://sfx/kickstart1.wav" type="AudioStream" id=12]
+[ext_resource path="res://sfx/jump1.wav" type="AudioStream" id=13]
+[ext_resource path="res://sfx/land1.wav" type="AudioStream" id=14]
+[ext_resource path="res://sfx/stand-up.wav" type="AudioStream" id=15]
+[ext_resource path="res://sfx/walljump1.wav" type="AudioStream" id=16]
+[ext_resource path="res://sfx/crashland.wav" type="AudioStream" id=17]
+[ext_resource path="res://sfx/fall1.wav" type="AudioStream" id=18]
+[ext_resource path="res://Camera.gd" type="Script" id=19]
+[ext_resource path="res://background7.png" type="Texture" id=20]
+[ext_resource path="res://background4.png" type="Texture" id=21]
+[ext_resource path="res://background1.png" type="Texture" id=22]
+[ext_resource path="res://background6.png" type="Texture" id=23]
+[ext_resource path="res://background5.png" type="Texture" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -102,6 +109,83 @@ _sections_unfolded = [ "Offset" ]
 
 shape = SubResource( 2 )
 
+[node name="Sfx" type="Node2D" parent="Player" index="2"]
+
+[node name="Kickstart1" type="AudioStreamPlayer" parent="Player/Sfx" index="0"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jump1" type="AudioStreamPlayer2D" parent="Player/Sfx" index="1"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Land1" type="AudioStreamPlayer2D" parent="Player/Sfx" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="StandUp" type="AudioStreamPlayer2D" parent="Player/Sfx" index="3"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Walljump1" type="AudioStreamPlayer2D" parent="Player/Sfx" index="4"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Crashland" type="AudioStreamPlayer2D" parent="Player/Sfx" index="5"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Fall1" type="AudioStreamPlayer2D" parent="Player/Sfx" index="6"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [node name="Camera" type="Camera2D" parent="." index="2"]
 
 anchor_mode = 1
@@ -126,11 +210,12 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-script = ExtResource( 12 )
+script = ExtResource( 19 )
 _sections_unfolded = [ "Drag Margin" ]
 
 [node name="Paralax" type="ParallaxBackground" parent="." index="3"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, -50 )
 rotation = 0.0
@@ -153,7 +238,7 @@ _sections_unfolded = [ "Motion" ]
 [node name="background7" type="Sprite" parent="Paralax/Sky" index="0"]
 
 position = Vector2( 122.091, 60.6532 )
-texture = ExtResource( 13 )
+texture = ExtResource( 20 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 512, 512 )
 _sections_unfolded = [ "Region" ]
@@ -167,7 +252,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="background4" type="Sprite" parent="Paralax/Mountains1" index="0"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 21 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 512, 128 )
@@ -183,7 +268,7 @@ _sections_unfolded = [ "Motion" ]
 [node name="background1" type="Sprite" parent="Paralax/Mountains2" index="0"]
 
 position = Vector2( 162.039, 100.601 )
-texture = ExtResource( 15 )
+texture = ExtResource( 22 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 512, 128 )
 _sections_unfolded = [ "Region" ]
@@ -198,7 +283,7 @@ _sections_unfolded = [ "Motion" ]
 [node name="background6" type="Sprite" parent="Paralax/Clouds2" index="0"]
 
 position = Vector2( 202.634, 67.3602 )
-texture = ExtResource( 16 )
+texture = ExtResource( 23 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 512, 128 )
 
@@ -211,7 +296,7 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="background5" type="Sprite" parent="Paralax/Clouds1" index="0"]
 
-texture = ExtResource( 17 )
+texture = ExtResource( 24 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 512, 128 )

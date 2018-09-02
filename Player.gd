@@ -59,6 +59,7 @@ func _physics_process(delta):
 				dy = 0
 			if input_pressed:
 				state = State.Skating
+				$Sfx/Kickstart1.play()
 				print("skate")
 		State.Skating:
 			$Sprite.animation = ANIM_SKATE
@@ -71,6 +72,7 @@ func _physics_process(delta):
 			elif is_on_floor():
 				dy = 0
 			elif dy > 12:
+				$Sfx/Fall1.play()
 				print("fall " + str(dy))
 				state = State.Falling
 		State.Prepare:
@@ -82,6 +84,7 @@ func _physics_process(delta):
 			if not input_down:
 				state = State.Jumping
 				Jump()
+				$Sfx/Jump1.play()
 				print("jump")
 		State.Jumping:
 			if dy > 0:
@@ -91,18 +94,24 @@ func _physics_process(delta):
 			if is_on_wall():
 				$Sprite.flip_h = not $Sprite.flip_h
 				print("wall jump")
+				$Sfx/Walljump1.play()
 				Jump()
 			elif is_on_ceiling():
 				dy = 0
 			elif is_on_floor():
+				$Sfx/Land1.play()
 				print("landed on floor")
-				state = State.Skating
+				if input_down:
+					state = State.Prepare
+				else:
+					state = State.Skating
 		State.Falling:
 			$Sprite.animation = ANIM_FALL
 			dx = 0;
 			if is_on_floor():
 				dy = 0
 				print("to idle")
+				$Sfx/Crashland.play()
 				state = State.Idle
 	
 	dy += delta * GRAVITY
