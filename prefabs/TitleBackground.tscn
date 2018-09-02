@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gfx/black.png" type="Texture" id=1]
+
+[node name="TitleBackground" type="Sprite"]
+
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 480, 240 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+

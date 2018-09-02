@@ -21,6 +21,7 @@ func _on_Door_body_entered(body):
 	if body.name == "Player":
 		if body.has_mail:
 			print("lets go")
-			get_tree().change_scene(next_world)
+			if next_world != null:
+				get_tree().change_scene(next_world)
 		else:
 			print("Where is my mail?")
