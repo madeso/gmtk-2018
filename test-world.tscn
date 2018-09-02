@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://player8.png" type="Texture" id=3]
-[ext_resource path="res://player9.png" type="Texture" id=4]
-[ext_resource path="res://player1.png" type="Texture" id=5]
+[ext_resource path="res://player1.png" type="Texture" id=3]
+[ext_resource path="res://player8.png" type="Texture" id=4]
+[ext_resource path="res://player9.png" type="Texture" id=5]
 [ext_resource path="res://player4.png" type="Texture" id=6]
 [ext_resource path="res://player5.png" type="Texture" id=7]
 [ext_resource path="res://player7.png" type="Texture" id=8]
@@ -12,18 +12,23 @@
 [ext_resource path="res://player3.png" type="Texture" id=10]
 [ext_resource path="res://player6.png" type="Texture" id=11]
 [ext_resource path="res://Camera.gd" type="Script" id=12]
+[ext_resource path="res://background7.png" type="Texture" id=13]
+[ext_resource path="res://background4.png" type="Texture" id=14]
+[ext_resource path="res://background1.png" type="Texture" id=15]
+[ext_resource path="res://background6.png" type="Texture" id=16]
+[ext_resource path="res://background5.png" type="Texture" id=17]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
@@ -48,7 +53,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.17303, 13.3635 )
@@ -73,7 +78,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -196611, 0, 196609, -196610, 0, 3, -196609, 0, 3, -262144, 0, 3, -262143, 0, 3, -262142, 0, 3, -262141, 0, 3, -262140, 0, 3, -262139, 0, 3, -262138, 0, 3, -262137, 0, 3, -262136, 0, 3, -262135, 0, 3, -262134, 0, 3, -262133, 0, 3, -262132, 0, 0, -131075, 0, 1, -131074, 0, 65539, -131073, 0, 131073, -196608, 0, 131073, -196607, 0, 131073, -196606, 0, 131073, -196605, 0, 131073, -196604, 0, 131073, -196603, 0, 131073, -196602, 0, 131073, -196601, 0, 131073, -196600, 0, 131073, -196599, 0, 131073, -196598, 0, 131073, -196597, 0, 131074, -196596, 0, 131075, -65539, 0, 1, -65538, 0, 131075, -131061, 0, 1, -131060, 0, 131075, -3, 0, 1, -2, 0, 131075, -65525, 0, 1, -65524, 0, 131075, 65533, 0, 1, 65534, 0, 131075, 11, 0, 1, 12, 0, 131075, 131069, 0, 1, 131070, 0, 131075, 65543, 0, 196609, 65544, 0, 0, 65547, 0, 1, 65548, 0, 131075, 196605, 0, 1, 196606, 0, 2, 196607, 0, 3, 131072, 0, 3, 131073, 0, 3, 131074, 0, 3, 131075, 0, 3, 131076, 0, 3, 131077, 0, 0, 131079, 0, 1, 131080, 0, 2, 131081, 0, 3, 131082, 0, 3, 131083, 0, 65537, 131084, 0, 131075, 262141, 0, 131072, 262142, 0, 131073, 262143, 0, 131073, 196608, 0, 131073, 196609, 0, 131073, 196610, 0, 131073, 196611, 0, 131073, 196612, 0, 131074, 196613, 0, 131075, 196615, 0, 131072, 196616, 0, 131073, 196617, 0, 131073, 196618, 0, 131073, 196619, 0, 131074, 196620, 0, 131075, 262148, 0, 1, 262149, 0, 131075, 262155, 0, 1, 262156, 0, 131075, 327684, 0, 1, 327685, 0, 2, 327686, 0, 3, 327687, 0, 3, 327688, 0, 3, 327689, 0, 3, 327690, 0, 3, 327691, 0, 65537, 327692, 0, 131075, 393220, 0, 131072, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131073, 393224, 0, 131073, 393225, 0, 131073, 393226, 0, 131073, 393227, 0, 131073, 393228, 0, 196611 )
+tile_data = PoolIntArray( -524291, 0, 196609, -524290, 0, 3, -524289, 0, 3, -589824, 0, 3, -589823, 0, 3, -589822, 0, 3, -589821, 0, 3, -589820, 0, 3, -589819, 0, 3, -589818, 0, 3, -589817, 0, 3, -589816, 0, 3, -589815, 0, 3, -589814, 0, 3, -589813, 0, 3, -589812, 0, 3, -589811, 0, 3, -589810, 0, 3, -589809, 0, 3, -589808, 0, 3, -589807, 0, 3, -589806, 0, 3, -589805, 0, 3, -589804, 0, 3, -589803, 0, 3, -589802, 0, 3, -589801, 0, 3, -589800, 0, 3, -589799, 0, 3, -589798, 0, 3, -589797, 0, 3, -589796, 0, 3, -589795, 0, 3, -589794, 0, 3, -589793, 0, 0, -458755, 0, 1, -458754, 0, 65539, -458753, 0, 131073, -524288, 0, 131073, -524287, 0, 131073, -524286, 0, 131073, -524285, 0, 131073, -524284, 0, 131073, -524283, 0, 131073, -524282, 0, 131073, -524281, 0, 131073, -524280, 0, 131073, -524279, 0, 131073, -524278, 0, 131073, -524277, 0, 131073, -524276, 0, 131073, -524275, 0, 131073, -524274, 0, 131073, -524273, 0, 131073, -524272, 0, 131073, -524271, 0, 131073, -524270, 0, 131073, -524269, 0, 131073, -524268, 0, 131073, -524267, 0, 131073, -524266, 0, 131073, -524265, 0, 131073, -524264, 0, 131073, -524263, 0, 131073, -524262, 0, 131073, -524261, 0, 131073, -524260, 0, 131073, -524259, 0, 131073, -524258, 0, 131074, -524257, 0, 131075, -393219, 0, 1, -393218, 0, 131075, -458722, 0, 1, -458721, 0, 131075, -327683, 0, 1, -327682, 0, 131075, -393186, 0, 1, -393185, 0, 131075, -262147, 0, 1, -262146, 0, 131075, -327650, 0, 1, -327649, 0, 131075, -196611, 0, 1, -196610, 0, 131075, -262143, 0, 196609, -262142, 0, 3, -262141, 0, 3, -262140, 0, 3, -262139, 0, 3, -262138, 0, 3, -262137, 0, 3, -262136, 0, 3, -262135, 0, 3, -262134, 0, 3, -262133, 0, 3, -262132, 0, 3, -262131, 0, 3, -262130, 0, 3, -262129, 0, 3, -262128, 0, 3, -262127, 0, 3, -262126, 0, 3, -262125, 0, 3, -262124, 0, 3, -262123, 0, 3, -262122, 0, 3, -262121, 0, 3, -262120, 0, 3, -262119, 0, 3, -262118, 0, 3, -262117, 0, 3, -262116, 0, 0, -262114, 0, 1, -262113, 0, 131075, -131075, 0, 1, -131074, 0, 131075, -196607, 0, 131072, -196606, 0, 131073, -196605, 0, 131073, -196604, 0, 131073, -196603, 0, 131073, -196602, 0, 131073, -196601, 0, 131073, -196600, 0, 131073, -196599, 0, 131073, -196598, 0, 131073, -196597, 0, 131073, -196596, 0, 131073, -196595, 0, 131073, -196594, 0, 131073, -196593, 0, 131073, -196592, 0, 131073, -196591, 0, 131073, -196590, 0, 131073, -196589, 0, 131073, -196588, 0, 131073, -196587, 0, 131073, -196586, 0, 131073, -196585, 0, 131073, -196584, 0, 131073, -196583, 0, 131073, -196582, 0, 131073, -196581, 0, 131073, -196580, 0, 196611, -196578, 0, 1, -196577, 0, 131075, -65539, 0, 1, -65538, 0, 131075, -131042, 0, 1, -131041, 0, 131075, -3, 0, 1, -2, 0, 131075, -65506, 0, 1, -65505, 0, 131075, 65533, 0, 1, 65534, 0, 131075, 30, 0, 1, 31, 0, 131075, 131069, 0, 1, 131070, 0, 131075, 65543, 0, 196609, 65544, 0, 3, 65545, 0, 0, 65548, 0, 196609, 65549, 0, 3, 65550, 0, 3, 65551, 0, 3, 65552, 0, 0, 65557, 0, 196609, 65558, 0, 3, 65559, 0, 3, 65560, 0, 3, 65561, 0, 3, 65562, 0, 3, 65563, 0, 3, 65564, 0, 3, 65565, 0, 3, 65566, 0, 65537, 65567, 0, 131075, 196605, 0, 1, 196606, 0, 2, 196607, 0, 3, 131072, 0, 3, 131073, 0, 3, 131074, 0, 3, 131075, 0, 3, 131076, 0, 3, 131077, 0, 0, 131079, 0, 1, 131080, 0, 65538, 131081, 0, 2, 131082, 0, 3, 131083, 0, 3, 131084, 0, 65537, 131085, 0, 65538, 131086, 0, 65538, 131087, 0, 65538, 131088, 0, 2, 131089, 0, 3, 131090, 0, 3, 131091, 0, 3, 131092, 0, 3, 131093, 0, 65537, 131094, 0, 65538, 131095, 0, 65538, 131096, 0, 65538, 131097, 0, 65538, 131098, 0, 65538, 131099, 0, 65538, 131100, 0, 65538, 131101, 0, 65538, 131102, 0, 65538, 131103, 0, 131075, 262141, 0, 131072, 262142, 0, 131073, 262143, 0, 131073, 196608, 0, 131073, 196609, 0, 131073, 196610, 0, 131073, 196611, 0, 131073, 196612, 0, 131074, 196613, 0, 131075, 196615, 0, 131072, 196616, 0, 131073, 196617, 0, 131073, 196618, 0, 131073, 196619, 0, 131073, 196620, 0, 131073, 196621, 0, 131073, 196622, 0, 131073, 196623, 0, 131073, 196624, 0, 131073, 196625, 0, 131073, 196626, 0, 131073, 196627, 0, 131073, 196628, 0, 131073, 196629, 0, 131073, 196630, 0, 131073, 196631, 0, 131073, 196632, 0, 131073, 196633, 0, 131073, 196634, 0, 131073, 196635, 0, 131073, 196636, 0, 131073, 196637, 0, 131073, 196638, 0, 131074, 196639, 0, 131075, 262148, 0, 1, 262149, 0, 131075, 262174, 0, 1, 262175, 0, 131075, 327684, 0, 1, 327685, 0, 2, 327686, 0, 3, 327687, 0, 3, 327688, 0, 3, 327689, 0, 3, 327690, 0, 3, 327691, 0, 3, 327692, 0, 3, 327693, 0, 3, 327694, 0, 3, 327695, 0, 3, 327696, 0, 3, 327697, 0, 3, 327698, 0, 3, 327699, 0, 3, 327700, 0, 3, 327701, 0, 3, 327702, 0, 3, 327703, 0, 3, 327704, 0, 3, 327705, 0, 3, 327706, 0, 3, 327707, 0, 3, 327708, 0, 3, 327709, 0, 3, 327710, 0, 65537, 327711, 0, 131075, 393220, 0, 131072, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131073, 393224, 0, 131073, 393225, 0, 131073, 393226, 0, 131073, 393227, 0, 131073, 393228, 0, 131073, 393229, 0, 131073, 393230, 0, 131073, 393231, 0, 131073, 393232, 0, 131073, 393233, 0, 131073, 393234, 0, 131073, 393235, 0, 131073, 393236, 0, 131073, 393237, 0, 131073, 393238, 0, 131073, 393239, 0, 131073, 393240, 0, 131073, 393241, 0, 131073, 393242, 0, 131073, 393243, 0, 131073, 393244, 0, 131073, 393245, 0, 131073, 393246, 0, 131073, 393247, 0, 196611 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="1"]
@@ -89,13 +94,13 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="Player" index="0"]
 
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "Fall"
 _sections_unfolded = [ "Offset" ]
 
 [node name="Collision" type="CollisionShape2D" parent="Player" index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Camera" type="Camera2D" parent="." index="2"]
 
@@ -123,5 +128,93 @@ editor_draw_limits = false
 editor_draw_drag_margin = false
 script = ExtResource( 12 )
 _sections_unfolded = [ "Drag Margin" ]
+
+[node name="Paralax" type="ParallaxBackground" parent="." index="3"]
+
+layer = -1
+offset = Vector2( 0, -50 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="Sky" type="ParallaxLayer" parent="Paralax" index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 512 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background7" type="Sprite" parent="Paralax/Sky" index="0"]
+
+position = Vector2( 122.091, 60.6532 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 512 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Mountains1" type="ParallaxLayer" parent="Paralax" index="1"]
+
+motion_scale = Vector2( 0.4, 0.4 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background4" type="Sprite" parent="Paralax/Mountains1" index="0"]
+
+texture = ExtResource( 14 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Mountains2" type="ParallaxLayer" parent="Paralax" index="2"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background1" type="Sprite" parent="Paralax/Mountains2" index="0"]
+
+position = Vector2( 162.039, 100.601 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Clouds2" type="ParallaxLayer" parent="Paralax" index="3"]
+
+motion_scale = Vector2( 0.3, 0.3 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background6" type="Sprite" parent="Paralax/Clouds2" index="0"]
+
+position = Vector2( 202.634, 67.3602 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+
+[node name="Clouds1" type="ParallaxLayer" parent="Paralax" index="4"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background5" type="Sprite" parent="Paralax/Clouds1" index="0"]
+
+texture = ExtResource( 17 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+_sections_unfolded = [ "Region", "Transform" ]
 
 
