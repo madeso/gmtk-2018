@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background1.png-1bda85794aa425f689dbcd5c83f6a789.stex"
+path="res://.import/mail1.png-312a1ea66901fc2d38445c7088c2924c.stex"
 
 [deps]
 
-source_file="res://background1.png"
-dest_files=[ "res://.import/background1.png-1bda85794aa425f689dbcd5c83f6a789.stex" ]
+source_file="res://gfx/items/mail1.png"
+dest_files=[ "res://.import/mail1.png-312a1ea66901fc2d38445c7088c2924c.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player2.png-2b430239ce117a407a6ea8eb5b537429.stex"
+path="res://.import/background4.png-62b06d81a3229b3ff0bf62ca3e368101.stex"
 
 [deps]
 
-source_file="res://player2.png"
-dest_files=[ "res://.import/player2.png-2b430239ce117a407a6ea8eb5b537429.stex" ]
+source_file="res://gfx/background/background4.png"
+dest_files=[ "res://.import/background4.png-62b06d81a3229b3ff0bf62ca3e368101.stex" ]
 
 [params]
 
@@ -15,7 +15,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

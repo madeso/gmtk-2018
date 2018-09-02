@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mail2.png-ee7133fc57ad0d82befaa5311c42aef2.stex"
+path="res://.import/door.png-f54d17f054d2cadd000786f83a58cda2.stex"
 
 [deps]
 
-source_file="res://mail2.png"
-dest_files=[ "res://.import/mail2.png-ee7133fc57ad0d82befaa5311c42aef2.stex" ]
+source_file="res://gfx/items/door.png"
+dest_files=[ "res://.import/door.png-f54d17f054d2cadd000786f83a58cda2.stex" ]
 
 [params]
 

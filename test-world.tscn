@@ -1,22 +1,22 @@
 [gd_scene load_steps=49 format=2]
 
-[ext_resource path="res://tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Door.gd" type="Script" id=2]
-[ext_resource path="res://door.png" type="Texture" id=3]
-[ext_resource path="res://Mail.gd" type="Script" id=4]
-[ext_resource path="res://mail1.png" type="Texture" id=5]
-[ext_resource path="res://mail2.png" type="Texture" id=6]
-[ext_resource path="res://mail3.png" type="Texture" id=7]
-[ext_resource path="res://Player.gd" type="Script" id=8]
-[ext_resource path="res://player1.png" type="Texture" id=9]
-[ext_resource path="res://player8.png" type="Texture" id=10]
-[ext_resource path="res://player9.png" type="Texture" id=11]
-[ext_resource path="res://player4.png" type="Texture" id=12]
-[ext_resource path="res://player5.png" type="Texture" id=13]
-[ext_resource path="res://player7.png" type="Texture" id=14]
-[ext_resource path="res://player2.png" type="Texture" id=15]
-[ext_resource path="res://player3.png" type="Texture" id=16]
-[ext_resource path="res://player6.png" type="Texture" id=17]
+[ext_resource path="res://gfx/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://scripts/Door.gd" type="Script" id=2]
+[ext_resource path="res://gfx/items/door.png" type="Texture" id=3]
+[ext_resource path="res://scripts/Mail.gd" type="Script" id=4]
+[ext_resource path="res://gfx/items/mail1.png" type="Texture" id=5]
+[ext_resource path="res://gfx/items/mail2.png" type="Texture" id=6]
+[ext_resource path="res://gfx/items/mail3.png" type="Texture" id=7]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=8]
+[ext_resource path="res://gfx/player/player1.png" type="Texture" id=9]
+[ext_resource path="res://gfx/player/player8.png" type="Texture" id=10]
+[ext_resource path="res://gfx/player/player9.png" type="Texture" id=11]
+[ext_resource path="res://gfx/player/player4.png" type="Texture" id=12]
+[ext_resource path="res://gfx/player/player5.png" type="Texture" id=13]
+[ext_resource path="res://gfx/player/player7.png" type="Texture" id=14]
+[ext_resource path="res://gfx/player/player2.png" type="Texture" id=15]
+[ext_resource path="res://gfx/player/player3.png" type="Texture" id=16]
+[ext_resource path="res://gfx/player/player6.png" type="Texture" id=17]
 [ext_resource path="res://sfx/kickstart2.wav" type="AudioStream" id=18]
 [ext_resource path="res://sfx/kickstart1.wav" type="AudioStream" id=19]
 [ext_resource path="res://sfx/jump1.wav" type="AudioStream" id=20]
@@ -33,27 +33,27 @@
 [ext_resource path="res://sfx/fall1.wav" type="AudioStream" id=31]
 [ext_resource path="res://sfx/fall2.wav" type="AudioStream" id=32]
 [ext_resource path="res://sfx/fall3.wav" type="AudioStream" id=33]
-[ext_resource path="res://Camera.gd" type="Script" id=34]
-[ext_resource path="res://background7.png" type="Texture" id=35]
-[ext_resource path="res://background4.png" type="Texture" id=36]
-[ext_resource path="res://background1.png" type="Texture" id=37]
-[ext_resource path="res://background6.png" type="Texture" id=38]
-[ext_resource path="res://background5.png" type="Texture" id=39]
-[ext_resource path="res://Spikes.gd" type="Script" id=40]
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=34]
+[ext_resource path="res://gfx/background/background7.png" type="Texture" id=35]
+[ext_resource path="res://gfx/background/background4.png" type="Texture" id=36]
+[ext_resource path="res://gfx/background/background1.png" type="Texture" id=37]
+[ext_resource path="res://gfx/background/background6.png" type="Texture" id=38]
+[ext_resource path="res://gfx/background/background5.png" type="Texture" id=39]
+[ext_resource path="res://scripts/Spikes.gd" type="Script" id=40]
 [ext_resource path="res://sfx/on-spike.wav" type="AudioStream" id=41]
-[ext_resource path="res://spikes.png" type="Texture" id=42]
+[ext_resource path="res://gfx/items/spikes.png" type="Texture" id=42]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 13, 16 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6, 6 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
@@ -62,7 +62,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=4]
 
 animations = [ {
 "frames": [ ExtResource( 9 ) ],
@@ -97,7 +97,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.17303, 13.3635 )
@@ -150,10 +150,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" index="1"]
 
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Mail" type="Area2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 76, 28 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -166,19 +167,20 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mail" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Mail" index="1"]
 
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 5 )
+frames = SubResource( 3 )
 animation = "Idle"
-frame = 1
+frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Player" type="KinematicBody2D" parent="." index="3"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -190,13 +192,13 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="Player" index="0"]
 
-frames = SubResource( 1 )
+frames = SubResource( 4 )
 animation = "Fall"
 _sections_unfolded = [ "Offset" ]
 
 [node name="Collision" type="CollisionShape2D" parent="Player" index="1"]
 
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="Sfx" type="Node2D" parent="Player" index="2"]
 
@@ -494,6 +496,7 @@ _sections_unfolded = [ "Region", "Transform" ]
 
 [node name="Spikes" type="Area2D" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 172, 32 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

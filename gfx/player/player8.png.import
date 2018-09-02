@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mail3.png-875f375e0e1a1814b77b1c1d8cc62a02.stex"
+path="res://.import/player8.png-7efc6d8e43e17daa051d7ef3fb0f59d9.stex"
 
 [deps]
 
-source_file="res://mail3.png"
-dest_files=[ "res://.import/mail3.png-875f375e0e1a1814b77b1c1d8cc62a02.stex" ]
+source_file="res://gfx/player/player8.png"
+dest_files=[ "res://.import/player8.png-7efc6d8e43e17daa051d7ef3fb0f59d9.stex" ]
 
 [params]
 
