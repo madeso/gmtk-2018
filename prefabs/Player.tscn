@@ -1,0 +1,271 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://gfx/player/player1.png" type="Texture" id=2]
+[ext_resource path="res://gfx/player/player8.png" type="Texture" id=3]
+[ext_resource path="res://gfx/player/player9.png" type="Texture" id=4]
+[ext_resource path="res://gfx/player/player4.png" type="Texture" id=5]
+[ext_resource path="res://gfx/player/player5.png" type="Texture" id=6]
+[ext_resource path="res://gfx/player/player7.png" type="Texture" id=7]
+[ext_resource path="res://gfx/player/player2.png" type="Texture" id=8]
+[ext_resource path="res://gfx/player/player3.png" type="Texture" id=9]
+[ext_resource path="res://gfx/player/player6.png" type="Texture" id=10]
+[ext_resource path="res://sfx/kickstart2.wav" type="AudioStream" id=11]
+[ext_resource path="res://sfx/kickstart1.wav" type="AudioStream" id=12]
+[ext_resource path="res://sfx/jump1.wav" type="AudioStream" id=13]
+[ext_resource path="res://sfx/jump2.wav" type="AudioStream" id=14]
+[ext_resource path="res://sfx/jump3.wav" type="AudioStream" id=15]
+[ext_resource path="res://sfx/land1.wav" type="AudioStream" id=16]
+[ext_resource path="res://sfx/land2.wav" type="AudioStream" id=17]
+[ext_resource path="res://sfx/land3.wav" type="AudioStream" id=18]
+[ext_resource path="res://sfx/stand-up.wav" type="AudioStream" id=19]
+[ext_resource path="res://sfx/walljump1.wav" type="AudioStream" id=20]
+[ext_resource path="res://sfx/walljump2.wav" type="AudioStream" id=21]
+[ext_resource path="res://sfx/walljump3.wav" type="AudioStream" id=22]
+[ext_resource path="res://sfx/crashland.wav" type="AudioStream" id=23]
+[ext_resource path="res://sfx/fall1.wav" type="AudioStream" id=24]
+[ext_resource path="res://sfx/fall2.wav" type="AudioStream" id=25]
+[ext_resource path="res://sfx/fall3.wav" type="AudioStream" id=26]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Prep",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "JumpDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Skate",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "JumpUp",
+"speed": 10.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.17303, 13.3635 )
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "Fall"
+_sections_unfolded = [ "Offset" ]
+
+[node name="Collision" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="Sfx" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="Kickstart0" type="AudioStreamPlayer2D" parent="Sfx" index="0"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Kickstart1" type="AudioStreamPlayer" parent="Sfx" index="1"]
+
+stream = ExtResource( 12 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Jump0" type="AudioStreamPlayer2D" parent="Sfx" index="2"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Jump1" type="AudioStreamPlayer2D" parent="Sfx" index="3"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Jump2" type="AudioStreamPlayer2D" parent="Sfx" index="4"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Land0" type="AudioStreamPlayer2D" parent="Sfx" index="5"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Land1" type="AudioStreamPlayer2D" parent="Sfx" index="6"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Land2" type="AudioStreamPlayer2D" parent="Sfx" index="7"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Prepare" type="AudioStreamPlayer2D" parent="Sfx" index="8"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Walljump0" type="AudioStreamPlayer2D" parent="Sfx" index="9"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Walljump1" type="AudioStreamPlayer2D" parent="Sfx" index="10"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Walljump2" type="AudioStreamPlayer2D" parent="Sfx" index="11"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Crashland" type="AudioStreamPlayer2D" parent="Sfx" index="12"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Fall0" type="AudioStreamPlayer2D" parent="Sfx" index="13"]
+
+stream = ExtResource( 24 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Fall1" type="AudioStreamPlayer2D" parent="Sfx" index="14"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Fall2" type="AudioStreamPlayer2D" parent="Sfx" index="15"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+

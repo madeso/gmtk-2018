@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gfx/background/background7.png" type="Texture" id=1]
+[ext_resource path="res://gfx/background/background4.png" type="Texture" id=2]
+[ext_resource path="res://gfx/background/background1.png" type="Texture" id=3]
+[ext_resource path="res://gfx/background/background6.png" type="Texture" id=4]
+[ext_resource path="res://gfx/background/background5.png" type="Texture" id=5]
+
+[node name="Background" type="ParallaxBackground" index="0"]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, -50 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, -50 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="Sky" type="ParallaxLayer" parent="." index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 512 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background7" type="Sprite" parent="Sky" index="0"]
+
+position = Vector2( 122.091, 60.6532 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 512 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Mountains1" type="ParallaxLayer" parent="." index="1"]
+
+motion_scale = Vector2( 0.4, 0.4 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background4" type="Sprite" parent="Mountains1" index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="Mountains2" type="ParallaxLayer" parent="." index="2"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background1" type="Sprite" parent="Mountains2" index="0"]
+
+position = Vector2( 162.039, 100.601 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Clouds2" type="ParallaxLayer" parent="." index="3"]
+
+motion_scale = Vector2( 0.3, 0.3 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background6" type="Sprite" parent="Clouds2" index="0"]
+
+position = Vector2( 202.634, 67.3602 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+
+[node name="Clouds1" type="ParallaxLayer" parent="." index="4"]
+
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="background5" type="Sprite" parent="Clouds1" index="0"]
+
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 128 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+
