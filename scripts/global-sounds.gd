@@ -8,6 +8,7 @@ func play_spikes():
 	$OnSpikes.play()
 
 func _ready():
+	$Pixelland.play()
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass

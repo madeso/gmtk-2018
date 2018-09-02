@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Pixelland.ogg-d8e4bff858b1b73553b650d66dea7d71.oggstr"
+
+[deps]
+
+source_file="res://music/Pixelland.ogg"
+dest_files=[ "res://.import/Pixelland.ogg-d8e4bff858b1b73553b650d66dea7d71.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
