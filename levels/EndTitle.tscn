@@ -5,7 +5,7 @@
 [ext_resource path="res://fonts/theme.tres" type="Theme" id=3]
 [ext_resource path="res://prefabs/Title.tscn" type="PackedScene" id=4]
 
-[node name="MainTitle" type="Control"]
+[node name="EndTitle" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -22,43 +22,15 @@ size_flags_vertical = 1
 
 [node name="GoToWorldOnKey" parent="." index="1" instance=ExtResource( 2 )]
 
-[node name="Label" type="Label" parent="." index="2"]
+[node name="Label2" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 4.0
-margin_top = 144.0
-margin_right = 308.0
-margin_bottom = 237.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-theme = ExtResource( 3 )
-text = "art & programming:
-madeso: http://i.madeso.me
-
-music by: Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Theme" ]
-
-[node name="Label2" type="Label" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 188.0
+margin_left = 168.0
 margin_top = 116.0
-margin_right = 329.0
+margin_right = 309.0
 margin_bottom = 130.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -67,12 +39,14 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 3 )
-text = "A ONE BUTTON GAME"
+text = "THANKS FOR PLAYING!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme" ]
 
-[node name="Title" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Title" parent="." index="3" instance=ExtResource( 4 )]
+
+_sections_unfolded = [ "Transform" ]
 
 

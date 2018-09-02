@@ -37,7 +37,6 @@ __meta__ = {
 [node name="Door" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -8, 24 )
-next_world = null
 
 [node name="Mail" parent="." index="2" instance=ExtResource( 3 )]
 
