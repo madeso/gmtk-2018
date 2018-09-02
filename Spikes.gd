@@ -16,4 +16,6 @@ func _ready():
 
 
 func _on_Spikes_body_entered(body):
-	print("restart level")
+	if body.name == "Player":
+		print("restart level")
+		get_tree().reload_current_scene()

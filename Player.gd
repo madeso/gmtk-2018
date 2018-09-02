@@ -30,6 +30,11 @@ enum State {
 var state = State.Falling
 
 func _ready():
+	print("lets get skating")
+	if has_mail:
+		print("has mail")
+	else:
+		print("need to fetch mail")
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
