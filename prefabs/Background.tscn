@@ -8,7 +8,6 @@
 
 [node name="Background" type="ParallaxBackground" index="0"]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, -50 )
 rotation = 0.0
@@ -38,10 +37,11 @@ _sections_unfolded = [ "Region" ]
 
 [node name="Mountains1" type="ParallaxLayer" parent="." index="1"]
 
+position = Vector2( 0, -30 )
 motion_scale = Vector2( 0.4, 0.4 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 512, 0 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="background4" type="Sprite" parent="Mountains1" index="0"]
 
@@ -53,10 +53,11 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="Mountains2" type="ParallaxLayer" parent="." index="2"]
 
+position = Vector2( 0, -36 )
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 512, 0 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="background1" type="Sprite" parent="Mountains2" index="0"]
 
@@ -68,10 +69,11 @@ _sections_unfolded = [ "Region" ]
 
 [node name="Clouds2" type="ParallaxLayer" parent="." index="3"]
 
+position = Vector2( 0, -40 )
 motion_scale = Vector2( 0.3, 0.3 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 512, 0 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="background6" type="Sprite" parent="Clouds2" index="0"]
 
@@ -82,10 +84,11 @@ region_rect = Rect2( 0, 0, 512, 128 )
 
 [node name="Clouds1" type="ParallaxLayer" parent="." index="4"]
 
+position = Vector2( 0, -50 )
 motion_scale = Vector2( 0.2, 0.2 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 512, 0 )
-_sections_unfolded = [ "Motion" ]
+_sections_unfolded = [ "Motion", "Transform" ]
 
 [node name="background5" type="Sprite" parent="Clouds1" index="0"]
 
