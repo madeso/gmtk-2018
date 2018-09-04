@@ -19,15 +19,13 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Pixelland" type="AudioStreamPlayer2D" parent="." index="1"]
+[node name="Pixelland" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 2000.0
-attenuation = 1.0
+mix_target = 0
 bus = "Master"
-area_mask = 1
 
 
